@@ -91,6 +91,11 @@ If we go only with proposed features above,
 multi-line headings do not work well.
 See [heading example] in the Background section of [CSS Line Grid].
 
+Another such example is creating a note in smaller font size,
+whose lines do not snap to grids,
+but following normal paragraphs should be back to snap.
+Authors need to manage the box height to be the multiple of the unit height.
+
 I think we can live without features for multi-line headings in the _minimum_ level,
 but this section tries to see how much easy or complicated it is.
 
