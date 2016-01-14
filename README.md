@@ -53,6 +53,11 @@ the used value of `line-height` of the root element.
 This unit is useful to add margins
 while keeping the height in the multiple of the unit height.
 
+Example:
+```
+h1 { margin-after: 1rlh; }
+```
+
 ## 3. Snap widths
 
 ```
@@ -126,47 +131,6 @@ We could add limitations without sacrificing use cases, such as:
 
 Is this valuable to consider further with such limitations,
 or is it enough to let authors to workaround in the _minimum_ level spec?
-
-## Borders
-
-Borders are one of the things where this proposal behaves differently from [CSS Line Grid].
-However, snapping the next line of a box with borders isn't likely what authors would want,
-because borders are usually much thinner than the unit line height,
-thus snapping to grid is likely to give more spaces than desired.
-
-That said,
-either in this proposal or in [CSS Line Grid],
-authors need to give enough considerations if s/he wants to use borders
-in vertically-rhythmed documents.
-
-One possible solution is to define a border that does not affect layout,
-but it's out of scope of this document.
-
-## Margins/paddings
-
-Authors have the tool to make it to work; the `rlh` unit.
-It should be authors' responsibility to use it wisely.
-[CSS Line Grid] can snap to grid even if authors use fractional margins,
-but the result is not likely to help much anyway,
-because it expands margins/paddings unexpectedly and uncontrollably.
-
-The amount of margins/paddings matter a lot in visual designs.
-We can trust authors to do it correctly
-if s/he cares about vertical rhythms.
-
-## Tables
-
-Tables usually have cell padding,
-or almost always have cell borders in East Asia.
-Due to that,
-it's unlikely that neither `snap-height` nor line grid can help much
-for the same reasons as borders/margins/paddings.
-
-We could add a UA stylesheet to avoid possible confusions:
-```
-table { snap-height: none; }
-```
-or `margin-box` (see "Multi-line headings" below.)
 
 [CSS Line Grid]: https://drafts.csswg.org/css-line-grid/
 [heading example]: https://drafts.csswg.org/css-line-grid/#example-93bb7545
