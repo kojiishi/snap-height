@@ -152,4 +152,4 @@ Here are some examples:
 
 [CSS Line Grid]: https://drafts.csswg.org/css-line-grid/
 [heading example]: https://drafts.csswg.org/css-line-grid/#example-93bb7545
-[Examples]: #Examples
+[Examples]: #examples
