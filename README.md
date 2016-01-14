@@ -69,7 +69,7 @@ Inherited: yes
 ```
 
 When this property is set to `rem`,
-the logical width of content-box is rounded _down_ to the closest multiple of `1rem`
+the logical width of the content-box is rounded _down_ to the closest multiple of `1rem`
 by increasing the used value of `margin-right`.
 
 This feature is useful for Han ideograph-based scripts.
