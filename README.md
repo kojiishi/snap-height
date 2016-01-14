@@ -15,7 +15,8 @@ so that objets aligns to vertical rhythms
 as the result of stacking.
 
 For the background, benefits, or use cases of the feature,
-please refer to [CSS Line Grid].
+please refer to [CSS Line Grid],
+or [Examples] for how this feature helps web developers.
 
 # Proposals
 
@@ -45,10 +46,16 @@ Adding half spaces to before/after in this case works good for Asian typography,
 has similarity with CSS line height calculation,
 but how does Latin typography adjust spaces in this case?
 
+* [Examples] looks like adding spaces equally and works good for Latin and Asians?
+* [This page](http://typecast.com/blog/4-simple-steps-to-vertical-rhythm) has
+one example of 15px/20px, and the other example of equal spacing
+(with margin-top: 2rlh.)
+
+
 ## 2. The `rlh` unit
 
 The `rlh` unit is a relative length unit that computes to
-the used value of `line-height` of the root element.
+the `line-height` of the root element.
 
 This unit is useful to add margins
 while keeping the height in the multiple of the unit height.
@@ -57,6 +64,7 @@ Example:
 ```
 h1 { margin-after: 1rlh; }
 ```
+See [Examples] for real usages.
 
 ## 3. Snap widths
 
@@ -132,5 +140,15 @@ We could add limitations without sacrificing use cases, such as:
 Is this valuable to consider further with such limitations,
 or is it enough to let authors to workaround in the _minimum_ level spec?
 
+# Examples
+
+People are hacking CSS/SASS to implement vertical rhythms.
+Here are some examples:
+
+* [Vertical Rhythm in Compass](http://compass-style.org/reference/compass/typography/vertical_rhythm/)
+* [Vertical Rhythm Tool](http://soqr.fr/vertical-rhythm/)
+* [Aesthetic Sass 3: Typography and Vertical Rhythm](https://scotch.io/tutorials/aesthetic-sass-3-typography-and-vertical-rhythm)
+
 [CSS Line Grid]: https://drafts.csswg.org/css-line-grid/
 [heading example]: https://drafts.csswg.org/css-line-grid/#example-93bb7545
+[Examples]: #Examples
