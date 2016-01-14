@@ -49,7 +49,7 @@ but how does Latin typography adjust spaces in this case?
 * [Examples] looks like adding spaces equally and works good for Latin and Asians?
 * [This page](http://typecast.com/blog/4-simple-steps-to-vertical-rhythm) has
 one example of 15px/20px, and the other example of equal spacing
-(with margin-top: 2rlh.)
+(with `margin-top: 2rlh`, see below for `rlh`.)
 
 
 ## 2. The `rlh` unit
@@ -60,9 +60,10 @@ the `line-height` of the root element.
 This unit is useful to add margins
 while keeping the height in the multiple of the unit height.
 
-Example:
+Examples:
 ```
-h1 { margin-after: 1rlh; }
+h1 { margin-before: 1rlh; }
+h2 { margin-before: .8rlh; margin-after: .2rlh; }
 ```
 See [Examples] for real usages.
 
