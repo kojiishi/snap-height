@@ -57,19 +57,15 @@ the `line-height` of the root element.
 This unit is useful to add margins
 while keeping the height in the multiple of the unit height.
 
-<span style="
-  display: inline-block;
-  float: right;
-  background: url(http://typecast.com/images/uploads/side-column-every-line.png) no-repeat 0 -170px;
-  width: 250px;
-  height: 130px;"></span>
 For example:
 ```css
 h1 { margin-before: 2rlh; }
 ```
-can produce layout like the picture on right.
+can produce layout like the picture below
+(from [monotype blog](http://typecast.com/blog/4-simple-steps-to-vertical-rhythm)):
+![](http://typecast.com/images/uploads/side-column-every-line.png)
 
-If author wants more spaces before than after:
+If author wants more spaces in before than after:
 ```css
 h2 { margin-before: .8rlh; margin-after: .2rlh; }
 ```
@@ -133,8 +129,8 @@ In this case, you can't snap baselines.
 Is the equal spacing correct?
 Should we distribute spaces according to the ascent/descent ratio?
 Should we switch between `line` and `baseline` by even/odd RLH?
-The example in `rlh` section is from [monotype blog](http://typecast.com/blog/4-simple-steps-to-vertical-rhythm),
-it looks like adding spaces equally.
+The example in `rlh` section
+looks like adding spaces equally.
 
 ## Interruptions
 
