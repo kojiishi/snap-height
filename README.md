@@ -20,6 +20,10 @@ control heights of objects
 so that objets align to vertical rhythms
 as the result of stacking.
 
+[Search for "vertical rhythm"](https://www.google.com/#q=vertical+rhythm)
+to see how many pages are talking about SASS hacks
+to do this.
+
 # Base Proposals
 
 ## 1. The `snap-height` property
@@ -53,12 +57,26 @@ the `line-height` of the root element.
 This unit is useful to add margins
 while keeping the height in the multiple of the unit height.
 
-Examples:
+<span style="
+  display: inline-block;
+  float: right;
+  background: url(http://typecast.com/images/uploads/side-column-every-line.png) no-repeat 0 -170px;
+  width: 250px;
+  height: 130px;"></span>
+For example:
+```css
+h1 { margin-before: 2rlh; }
 ```
-h1 { margin-before: 1rlh; }
+can produce layout like the picture on right.
+
+If author wants more spaces before than after:
+```css
 h2 { margin-before: .8rlh; margin-after: .2rlh; }
 ```
-See [Examples] for real usages.
+because the sum of margins is multiple of `rlh`,
+text after the heading are back on the vertical rhythm.
+
+See [Examples] for other examples on the web.
 
 ## 3. Snap widths
 
@@ -80,7 +98,7 @@ and probably not applicable for other scripts.
 # Other considerations
 
 Here are a list of things that are more complicated than the base proposals
-and there are some unclear issues in the requirements and/or how to design it,
+and there are some open issues in the requirements/designs,
 but they are considered to have some certain needs.
 
 ## Baseline
@@ -93,7 +111,7 @@ Name: snap-height
 Value: none | line | baseline
 ```
 When this property is set to `baseline`,
-the additional spaces are distributed differently.
+the additional spaces are distributed as below:
 
 * _space-over_ = RLH - mod(A - RA, RLH)
 * _space-under_ = RLH - mod(D - RD, RLH)
@@ -109,27 +127,27 @@ This will result in:
 (except when fallback fonts are used.)
 
 **ISSUE**:
-I could not figure out how Latin typography lays out, for instance,
-headings that span two lines.
+I could not figure out how Latin typography lays out when, for instance,
+headings span two lines.
 In this case, you can't snap baselines.
 Is the equal spacing correct?
+Should we distribute spaces according to the ascent/descent ratio?
 Should we switch between `line` and `baseline` by even/odd RLH?
-
-* [Examples] looks like adding spaces equally.
-* [This page](http://typecast.com/blog/4-simple-steps-to-vertical-rhythm) has
-one example of 15px/20px, and the other example of equal spacing
-(with `margin-top: 2rlh`, see below for `rlh`.)
+The example in `rlh` section is from [monotype blog](http://typecast.com/blog/4-simple-steps-to-vertical-rhythm),
+it looks like adding spaces equally.
 
 ## Interruptions
 
 From a [monotype blob](http://typecast.com/blog/4-simple-steps-to-vertical-rhythm):
 
-<i>As Robert Bringhurst explains in The Elements of Typographic Style, interruptions like this are ok as long as we resume the rhythm afterwards:<br>
-“Headings, subheads, block quotations, footnotes, illustrations, captions and other intrusions into the text create syncopations and variations against the base rhythm of regularly [spaced] lines. These variations can and should add life to the page, but the main text should also return after each variation precisely on beat and in phase.”</i>
+> As Robert Bringhurst explains in The Elements of Typographic Style, interruptions like this are ok as long as we resume the rhythm afterwards:
+
+>> _“Headings, subheads, block quotations, footnotes, illustrations, captions and other intrusions into the text create syncopations and variations against the base rhythm of regularly [spaced] lines. These variations can and should add life to the page, but the main text should also return after each variation precisely on beat and in phase.”_
 
 As long as these interruptions are single line,
 or every line of such interruptions should also align to grids,
-the base proposal supports the scenario.
+the base proposal supports the requirement
+even if font sizes are different.
 
 However, if such interruptions flow multiple lines,
 and authors want each line not to align to grids,
@@ -144,20 +162,20 @@ Such interruptions can be divided to two different requirements:
 
 IIUC this isn't hard to implement.
 For instance, when:
-```
+```css
 snap-height: margin-after;
 ```
 increase the used value of `margin-after`
 so that the logical height becomes the multiple of the root element.
 
-### Adjust before/after-space
+### Adjust both before and after-space
 
 IIUC this is harder,
 because we need to increase `margin-before` after layout is done.
 Doing so can change the logical top of the border-box after the layout.
 
 For instance, when:
-```
+```css
 snap-height: margin-box;
 ```
 the rounding is applied to the logical heights of the margin-boxes,
@@ -169,28 +187,40 @@ The additional space is distributed to before and after equally.
 We could add limitations without sacrificing use cases, such as:
 
 * When the block is fragmented across columns, pages, etc.,
-the behavior is fallback to `margin-after`?
+fallback to `margin-after`?
 * When the block contains absolute positioned object,
-the behavior is fallback to `margin-after`?
+fallback to `margin-after`?
 * When the block height exceeds, say, 100vh,
-the behavior is fallback to `margin-after`?
+fallback to `margin-after`?
 * Does this work well with flexbox/grids? I'm not sure...
 
 ### Workaround
 
-If `margin-box` does not make in the first level,
-one possible workaround is to add a span:
-```
+Without using `margin-box`,
+one possible workaround authors can do is to add a span:
+```html
 <h1><span>long long long heading text</span></h1>
 ```
 and then with CSS:
-```
+```css
 h1 > span {
   display: inline-block;
   snap-height: none;
 }
 ```
-So there's a way to look good, though not pretty.
+This should give the same result as `margin-box`,
+though not pretty.
+
+## Naming
+
+I didn't spend much time thinking about naming
+both of the spec and of the properties.
+
+It can be later, but suggestions are also helpful.
+
+* CSS Snap Lines
+* CSS Vertical Rhythm
+* CSS Line Rhythm
 
 # Examples
 
