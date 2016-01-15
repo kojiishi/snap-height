@@ -37,7 +37,8 @@ Inherited: yes
 ```
 
 When this property is set to `line`,
-the used value of `line-height` is rounded _up_ to the closest multiple of
+the used value of `line-height` of the descendants
+is rounded _up_ to the closest multiple of
 the used value of `line-height` of the root element.
 
 The half of the additional space is inserted before the line box,
