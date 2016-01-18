@@ -123,8 +123,8 @@ the base proposal cannot return to the rhythm.
 
 Such interruptions can be divided to two different requirements:
 
-| Top-align (adjust margin-after) | Center-align (adjust both margins)
--|--|--
+\\| Top-align (adjust margin-after) | Center-align (adjust both margins)
+----|----|----
 Use cases|Multi-line headings in multi-columns, block quotes, notes|Multi-line headings
 Impl|Easy|Offset changes after layout can be complicated?
 
