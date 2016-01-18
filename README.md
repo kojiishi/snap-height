@@ -43,7 +43,7 @@ Inherited: yes
 ```
 
 When this property is set to `line`,
-the used value of `line-height` of the descendants
+the used value of `line-height` of line boxes in the element
 is rounded _up_ to the closest multiple of
 the used value of `line-height` of the root element.
 
@@ -62,7 +62,7 @@ The `rlh` unit is a relative length unit that computes to
 the line height of the root element.
 
 In this model,
-it is authors' repsonsibility to keep the sum of margins/paddings
+it is authors' responsibility to keep the sum of margins/paddings
 to the multiple of the rhythm unit.
 This unit helps authors doing so.
 
