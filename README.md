@@ -221,6 +221,19 @@ This is likely to cause a ragged-top designs
 unless all top heading have the same font sizes.
 Is such result expected?
 
+## Every 5th Line
+
+The [monotype blog](http://typecast.com/blog/4-simple-steps-to-vertical-rhythm)
+above later makes the sidenote to align every 5th line:
+![](http://typecast.com/images/uploads/side-column-incremental-leading.png)
+
+This can be simulated closely with the base proposals as:
+```css
+.sidenote {
+  line-height: .8rlh;
+}
+```
+
 ## Naming
 
 There was a feedback that this idea is not really a grid system that
