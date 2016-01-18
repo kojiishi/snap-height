@@ -20,13 +20,15 @@ control heights of objects
 so that objets align to vertical rhythms
 as the result of stacking.
 
-How common is this idea?
+How common is this?
 
 * [Search for "vertical rhythm css"](https://www.google.com/#q=vertical+rhythm+css)
 hits 37K.
 * [Compass](http://compass-style.org/), an open-source CSS authoring framework, has
 [Vertical Rhythm](http://compass-style.org/reference/compass/typography/vertical_rhythm/)
 functions.
+* [typecast by Monotype](http://typecast.com/how-it-works) lists this feature
+at 6th in the feature list.
 
 # Base Proposals
 
@@ -106,7 +108,7 @@ but they are considered to have some certain needs.
 
 ## Interruptions
 
-From a [monotype blob](http://typecast.com/blog/4-simple-steps-to-vertical-rhythm):
+From a [monotype blog](http://typecast.com/blog/4-simple-steps-to-vertical-rhythm):
 
 > As Robert Bringhurst explains in The Elements of Typographic Style, interruptions like this are ok as long as we resume the rhythm afterwards:
 
@@ -142,6 +144,10 @@ so that the logical height of the margin-box becomes
 the multiple of the line height of the root element.
 
 This process runs after the margin collapsing is completed.
+
+If the block is fragmented across column, pages, etc.,
+it applies to the last fragment box.
+**ISSUE**: to all? does it cause differences?
 
 ### Adjust both before and after-space
 
