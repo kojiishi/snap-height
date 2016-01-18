@@ -123,10 +123,12 @@ the base proposal cannot return to the rhythm.
 
 Such interruptions can be divided to two different requirements:
 
-\\| Top-align (adjust margin-after) | Center-align (adjust both margins)
+Type|Top-align|Center-align
 ----|----|----
-Use cases|Multi-line headings in multi-columns, block quotes, notes|Multi-line headings
-Impl|Easy|Offset changes after layout can be complicated?
+Adjust|Adjust margin-after.|Adjust both margin-before and margin-after equally.
+Use cases|Multi-line headings, block quotes, notes.|Multi-line headings.
+
+**ISSUE**: Is `baseline` one of the categories here, or separate?
 
 ### Adjust after-space
 
@@ -139,13 +141,14 @@ increase the used value of `margin-after`
 so that the logical height of the margin-box becomes
 the multiple of the line height of the root element.
 
-This process runs after the margin collapsing is competed.
+This process runs after the margin collapsing is completed.
 
 ### Adjust both before and after-space
 
 IIUC this is harder,
 because we need to increase `margin-before` after layout is done.
 Doing so can change the logical top of the border-box after the layout.
+Need experiments to know how much troublesome it is.
 
 For instance, when:
 ```css
