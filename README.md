@@ -230,6 +230,7 @@ above later makes the sidenote to align every 5th line:
 This can be simulated closely with the base proposals as:
 ```css
 .sidenote {
+  snap-height: none;
   line-height: .8rlh;
 }
 ```
