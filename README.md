@@ -134,12 +134,10 @@ Use cases|Multi-line headings, block quotes, notes.|Multi-line headings.
 
 ### Adjust after-space
 
-IIUC this isn't hard to implement.
-For instance, when:
 ```css
 snap-height: margin-after;
 ```
-increase the used value of `margin-after`
+This value increases the used value of `margin-after`
 so that the logical height of the margin-box becomes
 the multiple of the line height of the root element.
 
@@ -147,22 +145,22 @@ This process runs after the margin collapsing is completed.
 
 If the block is fragmented across column, pages, etc.,
 it applies to the last fragment box.
-**ISSUE**: to all? does it cause differences?
+**ISSUE**: to all? does it cause any differences?
 
 ### Adjust both before and after-space
+
+```css
+snap-height: margin-box;
+```
+With this CSS,
+the rounding is applied to the logical heights of the margin-boxes,
+instead of line heights.
+The additional space is distributed to before and after equally.
 
 IIUC this is harder,
 because we need to increase `margin-before` after layout is done.
 Doing so can change the logical top of the border-box after the layout.
 Need experiments to know how much troublesome it is.
-
-For instance, when:
-```css
-snap-height: margin-box;
-```
-the rounding is applied to the logical heights of the margin-boxes,
-instead of line heights.
-The additional space is distributed to before and after equally.
 
 We could add limitations without sacrificing use cases, such as:
 
@@ -178,8 +176,8 @@ fallback to `margin-after`?
 
 ### Workaround
 
-Without using `margin-box`,
-one possible workaround authors can do is to add a span:
+One possible workaround authors can do without `margin-box` value
+is to add a span:
 ```html
 <h1><span>long long long heading text</span></h1>
 ```
