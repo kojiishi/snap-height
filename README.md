@@ -174,7 +174,7 @@ fallback to `margin-after`?
 
 **ISSUE**: how `baseline` scenario fits in this case?
 
-### Workaround
+#### If without `margin-box`...
 
 One possible workaround authors can do without `margin-box` value
 is to add a span:
@@ -209,17 +209,16 @@ the additional spaces are distributed as below:
 * A, D: Ascent/Descent of the primary font of the element.
 * RA, RD: Ascent/Descent of the primary font of the root element.
 
+**ISSUE**: the expressions above need more verifications.
+
 This will result in:
 
 * The line height is multiple of RLH.
-* The multiple is always an odd number.
 * The baseline matches to the baseline of the root element
 (except when fallback fonts are used.)
 
-**ISSUE**:
-This is likely to cause a ragged-top designs
-unless all top heading have the same font sizes.
-Is such result expected?
+A sample picture from [Smashing Magazine](https://www.smashingmagazine.com/2012/12/css-baseline-the-good-the-bad-and-the-ugly/):
+![](https://media-mediatemple.netdna-ssl.com/wp-content/uploads/2012/10/accurate-alignment.jpg)
 
 ## Every 5th Line
 
