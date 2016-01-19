@@ -72,6 +72,7 @@ h1 { margin-before: 2rlh; }
 ```
 can produce layout like the picture below
 (from [monotype blog](http://typecast.com/blog/4-simple-steps-to-vertical-rhythm)):
+
 ![](http://typecast.com/images/uploads/side-column-every-line.png)
 
 If author wants more spaces in before than in after:
@@ -218,12 +219,14 @@ This will result in:
 (except when fallback fonts are used.)
 
 A sample picture from [Smashing Magazine](https://www.smashingmagazine.com/2012/12/css-baseline-the-good-the-bad-and-the-ugly/):
+
 ![](https://media-mediatemple.netdna-ssl.com/wp-content/uploads/2012/10/accurate-alignment.jpg)
 
 ## Every 5th Line
 
 The [monotype blog](http://typecast.com/blog/4-simple-steps-to-vertical-rhythm)
 above later makes the sidenote to align every 5th line:
+
 ![](http://typecast.com/images/uploads/side-column-incremental-leading.png)
 
 This can be simulated closely with the base proposals as:
