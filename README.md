@@ -126,12 +126,9 @@ the base proposal cannot return to the rhythm.
 
 Such interruptions can be divided to two different requirements:
 
-Type|Top-align|Center-align
-----|----|----
-Adjust|Adjust margin-after.|Adjust both margin-before and margin-after equally.
-Use cases|Multi-line headings, block quotes, notes.|Multi-line headings.
-
-**ISSUE**: Is `baseline` one of the categories here, or separate?
+1. Top-aligned block, adjust by margin-after.
+2. Center-alinged block,
+adjust by both margin-before and margin-after.
 
 ### Adjust after-space
 
@@ -197,30 +194,40 @@ though not pretty.
 The current [CSS Line Grid] spec defines a mode
 to snap baselines to other baselines.
 This can be achieved in this model by:
-```
-Name: snap-height
-Value: none | line | baseline
+```css
+snap-height: baseline
 ```
 When this property is set to `baseline`,
 the additional spaces are distributed as below:
 
-* _space-over_ = RLH - mod(A - RA, RLH)
-* _space-under_ = RLH - mod(D - RD, RLH)
+* _space-over_ = (RLH + RA - RD) / 2 - mod((LH + A - D) / 2, RLH)
+* _space-under_ = (RLH - RA + RD) / 2 - mod((LH - A + D) / 2, RLH)
 * RLH: the used line height of the root element.
-* A, D: Ascent/Descent of the primary font of the element.
 * RA, RD: Ascent/Descent of the primary font of the root element.
+* LH: the line height of the element.
+* A, D: Ascent/Descent of the primary font of the element.
 
-**ISSUE**: the expressions above need more verifications.
+**TODO**: the expressions above need reviews.
 
 This will result in:
 
 * The line height is multiple of RLH.
-* The baseline matches to the baseline of the root element
-(except when fallback fonts are used.)
+* The baseline matches to the baseline of the root element.
 
 A sample picture from [Smashing Magazine](https://www.smashingmagazine.com/2012/12/css-baseline-the-good-the-bad-and-the-ugly/):
 
 ![](https://media-mediatemple.netdna-ssl.com/wp-content/uploads/2012/10/accurate-alignment.jpg)
+
+## Baseline + after-space (First Baseline)
+
+In Latin, one may want to combine after-space
+with baseline of the first line.
+```css
+snap-height: first-baseline-and-margin-after
+```
+When the property is set to this value,
+the _space-over_ above is added to margin-before
+before computing margin-after.
 
 ## Every 5th Line
 
@@ -236,6 +243,33 @@ This can be simulated closely with the base proposals as:
   line-height: .8rlh;
 }
 ```
+
+## Summary
+
+<table>
+<tr><th>Type
+<th>center-line
+<th>baseline
+<th>top-align block
+<th>first baseline
+<th>center-align block
+<th>last baseline
+<tr><td>Adjust
+<td>space-over and space-under, equally
+<td>space-over and space-under, unequally
+<td>margin-after
+<td colspan=3>margin-before and margin-after
+<tr><td>Use cases
+<td>General
+<td>General (Latin)
+<td colspan=2>Multi-line headings, block quotes, footnotes
+<td colspan=2>Multi-line headings
+<tr><td>Complexity guesstimate
+<td>Low
+<td>Unequal line spaces?
+<td colspan=2>Low?
+<td colspan=2>Change top after layout is unknown
+</table>
 
 ## Naming
 
