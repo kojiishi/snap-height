@@ -129,6 +129,8 @@ Such interruptions can be divided to two different requirements:
 1. Top-aligned block, adjust by margin-after.
 2. Center-alinged block,
 adjust by both margin-before and margin-after.
+3. First baseline
+4. Last baseline
 
 ### Adjust after-space
 
@@ -143,7 +145,6 @@ This process runs after the margin collapsing is completed.
 
 If the block is fragmented across column, pages, etc.,
 it applies to the last fragment box.
-**ISSUE**: to all? does it cause any differences?
 
 ### Adjust both before and after-space
 
