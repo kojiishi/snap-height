@@ -30,6 +30,9 @@ functions.
 * [typecast by Monotype](http://typecast.com/how-it-works) lists this feature
 at 6th in the feature list.
 
+To see a sample CSS,
+click <q>Get the CSS</q> button in [Vertical Rhythm Tool](http://soqr.fr/vertical-rhythm/).
+
 # Base Proposals
 
 ## 1. The `snap-height` property
