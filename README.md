@@ -254,21 +254,27 @@ This can be simulated closely with the base proposals as:
 <th>first baseline
 <th>center-align block
 <th>last baseline
-<tr><td>Adjust
-<td>space-over and space-under, equally
-<td>space-over and space-under, unequally
-<td>margin-after
-<td colspan=3>margin-before and margin-after
 <tr><td>Use cases
 <td>General
 <td>General (Latin)
 <td colspan=2>Multi-line headings, block quotes, footnotes
 <td colspan=2>Multi-line headings
+<tr><td>Adjust from computed values
+<td>_space-over_ and _space-under_, equally
+<td>_space-over_ and _space-under_, unequally
+<td>N/A
+<td>_margin-before_
+<td colspan=2>N/A
+<tr><td>Adjust after layout
+<td>N/A
+<td>N/A
+<td colspan=2>_margin-after_
+<td colspan=2>_margin-before_ and _margin-after_
 <tr><td>Complexity guesstimate
 <td>Low
 <td>Unequal line spaces?
 <td colspan=2>Low?
-<td colspan=2>Change top after layout is unknown
+<td colspan=2>Change top after layout?
 </table>
 
 ## Naming
