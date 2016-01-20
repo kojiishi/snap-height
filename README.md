@@ -260,16 +260,16 @@ This can be simulated closely with the base proposals as:
 <td colspan=2>Multi-line headings, block quotes, footnotes
 <td colspan=2>Multi-line headings
 <tr><td>Adjust from computed values
-<td>_space-over_ and _space-under_, equally
-<td>_space-over_ and _space-under_, unequally
+<td><i>space-over</i> and <i>space-under</i>, equally
+<td><i>space-over</i> and <i>space-under</i>, unequally
 <td>N/A
-<td>_margin-before_
+<td><i>margin-before</i>
 <td colspan=2>N/A
 <tr><td>Adjust after layout
 <td>N/A
 <td>N/A
-<td colspan=2>_margin-after_
-<td colspan=2>_margin-before_ and _margin-after_
+<td colspan=2><i>margin-after</i>
+<td colspan=2><i>margin-before</i> and <i>margin-after</i>
 <tr><td>Complexity guesstimate
 <td>Low
 <td>Unequal line spaces?
