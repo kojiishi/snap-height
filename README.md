@@ -153,7 +153,8 @@ The current [CSS Line Grid] defines following keywords.
 <td><i>margin-before</i>
 <td colspan=2><i>margin-before</i> and <i>margin-after</i>
 <tr><td>Complexity guesstimate
-<td colspan=2>Low
+<td>Low
+<td>Low?
 <td colspan=3>Changing top after height was computed
 may introduce complexity.
 </table>
