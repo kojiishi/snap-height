@@ -35,7 +35,8 @@ it controls heights of lines and boxes
 so that lines align to grids as a consequence.
 2. Instead of defining grids,
 it relies on [CSS Custom Properties]
-for authors to assign a value to multiple boxes.
+for authors to assign a value to multiple boxes
+and multiple properties.
 
 # Proposals
 
@@ -94,10 +95,10 @@ the space distribution is changed as below:
 
 * _space-over_ = (L + BP - (1em - BP)) / 2 - mod((LH + A - D) / 2, L)
 * _space-under_ = (L - BP + (1em - BP)) / 2 - mod((LH - A + D) / 2, L)
-* L: the specified `<lenght>`.
+* L: the specified `<length>`.
 * BP: the specified `<number> * font-size`.
-* LH: the line height of the element.
-* A, D: Ascent/Descent of the primary font of the element.
+* LH: the line height of the fragmentainer.
+* A, D: Ascent/Descent of the primary font of the fragmentainer.
 
 **ISSUE**: Do we want to apply the same logic to block-level replaced elements?
 
@@ -120,7 +121,7 @@ we can add another keyword
 since snapping line boxes and snapping block-level elements are mutually exclusive.
 
 ```
-Value: none | snap-block-keyword <length> <number>?
+Value: none | snap-block-keyword? <length> <number>?
 snap-block-keyword: ...
 ```
 
@@ -143,7 +144,7 @@ The current [CSS Line Grid] defines following keywords.
 <td colspan=2>Multi-line headings, block quotes, footnotes
 <td>?
 <td colspan=2>Multi-line headings
-<tr><td>Adjust from computed values
+<tr><td>Adjust from computed values (before layout)
 <td>N/A
 <td><i>margin-before</i>
 <td colspan=3>N/A
@@ -153,7 +154,8 @@ The current [CSS Line Grid] defines following keywords.
 <td colspan=2><i>margin-before</i> and <i>margin-after</i>
 <tr><td>Complexity guesstimate
 <td colspan=2>Low
-<td colspan=3>Higher: Change top after height was computed
+<td colspan=3>Changing top after height was computed
+may introduce complexity.
 </table>
 
 ## 2. Snap widths
