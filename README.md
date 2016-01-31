@@ -89,8 +89,11 @@ h1 {
 
 When the optional `<number>` is specified,
 and it is between 0 and 1,
-it defines the baseline position within the line.
-In this case,
+it defines the baseline position within the line
+and it tries to align the font's baseline
+to the specified baseline in the grid.
+
+To do so,
 the space distribution is changed as below:
 
 * _space-over_ = (L + BP - (1em - BP)) / 2 - mod((LH + A - D) / 2, L)
