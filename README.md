@@ -33,7 +33,7 @@ click <q>Get the CSS</q> button in [Vertical Rhythm Tool](http://soqr.fr/vertica
 
 # Overview
 
-This proposal has 2 key factors:
+This proposal has 2 key characteristics:
 
 1. It controls heights of lines and boxes
 so that, when used alone, lines align to grids as a consequence.
