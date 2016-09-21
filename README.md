@@ -33,7 +33,7 @@ click <q>Get the CSS</q> button in [Vertical Rhythm Tool](http://soqr.fr/vertica
 
 # Overview
 
-This proposal tries to simplify the current [CSS Line Grid]
+This proposal differs from the current [CSS Line Grid]
 in the following 2 points:
 
 1. Instead of snapping to the line grid,
