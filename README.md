@@ -1,12 +1,17 @@
 CSS Snap Heights
 ================
 
-This document tries to simplify [CSS Line Grid].
+This document tries to support vertical rhythm in CSS,
+similar to [CSS Line Grid].
 
-The current draft has gone through a great simplification process
+The current [CSS Line Grid] focuses on positioning,
+and has gone through a great simplification process
 since its original proposal.
-This document tries further simplification,
-and see how well or not well such simplification can serve use cases.
+This document tries to focus on sizing,
+with further simplification.
+The two specs have some common use cases,
+but also complements each other,
+and each is still useful without the other.
 
 For the background, benefits, or use cases of the feature,
 please refer to [CSS Line Grid],
