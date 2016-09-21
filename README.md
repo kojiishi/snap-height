@@ -33,14 +33,11 @@ click <q>Get the CSS</q> button in [Vertical Rhythm Tool](http://soqr.fr/vertica
 
 # Overview
 
-This proposal differs from the current [CSS Line Grid]
-in the following 2 points:
+This proposal has 2 key factors:
 
-1. Instead of snapping to the line grid,
-it controls heights of lines and boxes
-so that lines align to grids as a consequence.
-2. Instead of defining grids,
-it relies on [CSS Custom Properties]
+1. It controls heights of lines and boxes
+so that, when used alone, lines align to grids as a consequence.
+2. It relies on [CSS Custom Properties] and normal CSS inheritance rules
 for authors to assign a value to multiple boxes
 and multiple properties.
 
