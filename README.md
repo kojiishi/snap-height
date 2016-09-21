@@ -26,6 +26,7 @@ hits 37K.
 functions.
 * [typecast by Monotype](http://typecast.com/how-it-works) lists this feature
 at 6th in the feature list.
+* [cutestrap](https://www.cutestrap.com/) aligns all elements and components to the grid.
 
 To see a sample CSS,
 click <q>Get the CSS</q> button in [Vertical Rhythm Tool](http://soqr.fr/vertical-rhythm/).
